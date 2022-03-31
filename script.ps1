@@ -26,7 +26,7 @@ param (
 
 $context = (Get-AzContext).Name
 Write-Output "Context: $context"
-
+Get-AzAutomationScheduledRunbook -ResourceGroupName $ResourceGroupName -AutomationAccountName $AutomationAccountName -ErrorAction SilentlyContinue
 $jobSchedules = Get-AzAutomationScheduledRunbook -ResourceGroupName $ResourceGroupName -AutomationAccountName $AutomationAccountName -ErrorAction SilentlyContinue
 $jobSchedule = $jobSchedules | Where-Object -Property "RunbookName" -eq $RunbookName
 
