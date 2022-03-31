@@ -13,16 +13,16 @@ param (
     $RunbookName
 )
 
-if (-not (Get-Module -Name Az.Accounts -ListAvailable -ErrorAction SilentlyContinue | Where-Object { $_.Version -eq "2.2.4" })) {
-    Install-Module -Name Az.Accounts -RequiredVersion 2.2.4 -Scope CurrentUser -Force
-}
+# if (-not (Get-Module -Name Az.Accounts -ListAvailable -ErrorAction SilentlyContinue | Where-Object { $_.Version -eq "2.2.4" })) {
+#     Install-Module -Name Az.Accounts -RequiredVersion 2.2.4 -Scope CurrentUser -Force
+# }
 
-if (-not (Get-Module -Name Az.Automation -ListAvailable -ErrorAction SilentlyContinue | Where-Object { $_.Version -eq "1.4.2" })) {
-    Install-Module -Name Az.Automation -RequiredVersion 1.4.2 -Scope CurrentUser -Force
-}
+# if (-not (Get-Module -Name Az.Automation -ListAvailable -ErrorAction SilentlyContinue | Where-Object { $_.Version -eq "1.4.2" })) {
+#     Install-Module -Name Az.Automation -RequiredVersion 1.4.2 -Scope CurrentUser -Force
+# }
 
-Import-Module -Name Az.Accounts -RequiredVersion 2.2.4
-Import-Module -Name Az.Automation -RequiredVersion 1.4.2
+# Import-Module -Name Az.Accounts -RequiredVersion 2.2.4
+# Import-Module -Name Az.Automation -RequiredVersion 1.4.2
 
 $context = (Get-AzContext).Name
 Write-Output "Context: $context"
